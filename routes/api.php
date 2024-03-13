@@ -1,9 +1,11 @@
+
 <?php
 
 use App\Http\Controllers\API\HealthCheckController;
 use App\Http\Controllers\API\Speedtest\GetLatestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Actions\Speedtests\RunOoklaSpeedtest;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +31,6 @@ Route::get('/healthcheck', HealthCheckController::class);
  */
 Route::get('/speedtest/latest', GetLatestController::class)
     ->name('speedtest.latest');
+
+Route::get('/speedtest/start', RunOoklaSpeedtest::class)
+    ->name('speedtest.start');
