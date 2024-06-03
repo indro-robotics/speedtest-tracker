@@ -1,3 +1,9 @@
+# Docker Start - Indro
+
+```
+docker compose -f docker-compose-indro.yaml up -d
+```
+
 # Speedtest Tracker
 
 > [!IMPORTANT]
