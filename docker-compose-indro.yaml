@@ -3,7 +3,7 @@ version: '3'
 services:
 
   speedtest-tracker:
-    image: lscr.io/linuxserver/speedtest-tracker:latest
+    image: lscr.io/linuxserver/speedtest-tracker:0.20.0
     container_name: speedtest-tracker
     ports:
       - 8080:80
@@ -13,6 +13,9 @@ services:
       - PGID=1000
       - DB_CONNECTION=sqlite
       - APP_DEBUG=true
+      - APP_KEY=base64:dPNevsVFzrt7kejNGYKCU2JtL++rENjxko61bBcoxYI=
+      - SPEEDTEST_SCHEDULE=*/5 * * * *
+      - DISPLAY_TIMEZONE=EDT
     volumes:
       - /home/indro/docker/speedtest-tracker/config:/config
       - /home/indro/docker/speedtest-tracker/routes/api.php:/app/www/routes/api.php
